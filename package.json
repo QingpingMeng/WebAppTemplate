@@ -1,0 +1,13 @@
+{
+  "name": "WebAppTemplate",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QingpingMeng/WebAppTemplate.git"
+  },
+  "license":"MIT",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1"
+  }
+}
