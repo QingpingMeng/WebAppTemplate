@@ -1,0 +1,17 @@
+<div class="container">
+	<!-- If authenticated --!>
+	<div ng-if="home.isAuthenticated()">
+		<!-- view content --!>
+	</div>
+
+	<div ng-if="!home.isAuthenticated()">
+	<div class="jumbotron">
+	<h2><i class="ion-images"></i> Instagram </h2>
+		  <p>This is a basic template. To continue, please log in with your Instagram account or create a new email account.</p>
+		  <p>
+		  <a class="btn btn-lg btn-success" ui-sref="login"><i class="ion-log-in"></i>Log in</a>
+		  <a class="btn btn-lg btn-primary" ui-sref="signup"><i class="ion-person-add"></i>Create account</a>
+		  </p>
+		  </div>
+		  </div>
+</div>

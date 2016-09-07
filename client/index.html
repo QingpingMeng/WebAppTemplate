@@ -1,0 +1,37 @@
+<html ng-app="Instagram">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title> Web app template </title>
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+	</head>
+
+	<body>
+		<!-- navigation bar --!>
+		<div class="navbar navbar-default navbar-static-top">
+			<div class="container">
+			<a href="/" class="navbar-brand"><i class="ion-images"></i>Instagram</a>
+			<ul class="nav navbar-nav">
+			<li><a ui-sref='home'>Home</a></li>
+			<li><a ui-sref='login'>Log in</a></li>
+			<li><a ui-sref='signup'>Sign up</a></li>
+			<li><a ng-click="logout()" href="#">Logout</a></li>
+			</ul>
+			</div>
+		</div>
+
+		<div ui-view></div>
+
+		<script src="../node_modules/angular/angular.min.js"></script>
+		<script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script src="../node_modules/angular-messages/angular-messages.min.js"></script>
+		<script src="app.js"></script>
+		<script src="controllers/home.js"></script>
+		<script src="controllers/signup.js"></script>
+		<script src="controllers/login.js"></script>
+		<script src="controllers/navbar.js"></script>
+	</body>
+</html>
