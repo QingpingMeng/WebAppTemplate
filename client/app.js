@@ -1,6 +1,7 @@
-var app = angular.module('Instagram',['ui.router','ngMessages']);
+var app = angular.module('Instagram',['ui.router','ngMessages','satellizer']);
 
-app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+app.config(['$stateProvider','$urlRouterProvider','$authProvider',
+		   function($stateProvider,$urlRouterProvider,$authProvider){
 	var homeState = {
 		url:'/home',
 		templateUrl:'views/home.html',
@@ -11,7 +12,8 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 	var loginState = {
 		url:'/login',
 		templateUrl:'views/login.html',
-		controller:'LoginCtrl'
+		controller:'LoginCtrl',
+		controllerAs:'login'
 	};
 
 	var signupState = {
@@ -21,10 +23,13 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 	};
 
 	$stateProvider.state('home',homeState);
-	//$stateProvider.state('login',loginState);
+	$stateProvider.state('login',loginState);
 	//$stateProvider.state('signup',signupState);
 	
 	$urlRouterProvider.otherwise('home');
+	
+	$authProvider.loginUrl = "http://localhost:3000/auth/login";
+	$authProvider.signupUrl = "http://localhost:3000/auth/signup";
 }]);
 
 app.run(['$rootScope', function($rootScope){
@@ -48,6 +53,6 @@ app.run(['$rootScope', function($rootScope){
 	});
 	$rootScope.$on('$stateNotFound',function(event, unfoundState, fromState, fromParams){
 		console.log('$stateNotFound '+unfoundState.to+'  - fired when a state cannot be found by its name.');
-		console$onole.log(unfoundState, fromState, fromParams);
+		console.log(unfoundState, fromState, fromParams);
 	});
 }]);
