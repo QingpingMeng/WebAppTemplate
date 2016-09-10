@@ -19,12 +19,13 @@ app.config(['$stateProvider','$urlRouterProvider','$authProvider',
 	var signupState = {
 		url:'/signup',
 		templateUrl:'views/signup.html',
-		controller:'SignupCtrl'
+		controller:'SignupCtrl',
+		controllerAs:'signup'
 	};
 
 	$stateProvider.state('home',homeState);
 	$stateProvider.state('login',loginState);
-	//$stateProvider.state('signup',signupState);
+	$stateProvider.state('signup',signupState);
 	
 	$urlRouterProvider.otherwise('home');
 	
