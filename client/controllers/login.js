@@ -19,7 +19,7 @@ var LoginCtrl = function($rootScope, $auth, $window){
 			$rootScope.currentUser = response.data.user;
 		})
 		.catch(function(res){
-			$scope.errorMessage={};
+			vm.errorMessage={};
 			angular.forEach(res.data.message, function(message, field){
 				vm.loginForm[field].$setValidity('server',false);
 				vm.errorMessage[field] = res.data.message[field];

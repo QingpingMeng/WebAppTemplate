@@ -3,13 +3,13 @@
 	<div class="center-form panel">
 		<div class="panel-body">
 			<h4 class="text-center"><i class="ion-person-add"></i>Sign up</h4>
-			<form method="post" ng-submit="signup()" name="signupForm">
-				<div class="form-group has-feedback" ng-class="{'has-error':signupForm.email.$invalid && signupForm.email.$dirty}">
+			<form method="post" ng-submit="signup.signup()" name="signup.signupForm">
+				<div class="form-group has-feedback" ng-class="{'has-error':signup.signupForm.email.$invalid && signup.signupForm.email.$dirty}">
 					<input class="form-control input-lg" type="email" name="email" ng-model="email" placeholder="email" required>
 					<span class="ion-at form-control-feedback"></span>
 				</div>
 
-				<div class="form-group has-feedback" ng-class="{'has-error':signupForm.password.$invalid && signupForm.password.$dirty}">
+				<div class="form-group has-feedback" ng-class="{'has-error':signup.signupForm.password.$invalid && signup.signupForm.password.$dirty}">
 					<input class="form-control input-lg" type="password" name="password" ng-model="password" placeholder="password" required>
 					<span class="ion-key form-control-feedback"></span>
 				</div>
